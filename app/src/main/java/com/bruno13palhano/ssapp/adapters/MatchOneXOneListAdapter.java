@@ -41,10 +41,6 @@ public class MatchOneXOneListAdapter extends ListAdapter<Match, SSUtil.CardViewH
         void onViewUpdate(int score, int position);
     }
 
-//    public void setScorePerSeries(int scorePerSeries){
-//        this.scorePerSeries = scorePerSeries;
-//    }
-
     public void setSeriesLayout(boolean isSeries){
         this.isSeries = isSeries;
     }
@@ -162,13 +158,6 @@ public class MatchOneXOneListAdapter extends ListAdapter<Match, SSUtil.CardViewH
                 @Override
                 public void onClick(View v) {
                     if (firstScoreListener != null) {
-//                        SSUtil.playerPlusScore(firstPlayerScore);
-//                        int newScore = SSUtil.getPlayerScore(firstPlayerScore);
-//                        int oldScore = 0;
-//
-//                        if(newScore > 0){
-//                            oldScore = newScore -1;
-//                        }
                         int newScore = setNewScoreMatch(firstPlayerScore, true);
                         int oldScore = setOldScoreMatch(newScore, true);
 
