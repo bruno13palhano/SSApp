@@ -13,6 +13,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 
+import com.bruno13palhano.ssapp.MatchHelper;
 import com.bruno13palhano.ssapp.R;
 import com.bruno13palhano.ssapp.SSUtil;
 import com.bruno13palhano.ssapp.data.Match;
@@ -158,8 +159,8 @@ public class MatchOneXOneListAdapter extends ListAdapter<Match, SSUtil.CardViewH
                 @Override
                 public void onClick(View v) {
                     if (firstScoreListener != null) {
-                        int newScore = setNewScoreMatch(firstPlayerScore, true);
-                        int oldScore = setOldScoreMatch(newScore, true);
+                        int newScore = MatchHelper.setNewScoreMatch(firstPlayerScore, true);
+                        int oldScore = MatchHelper.setOldScoreMatch(newScore, true);
 
                         firstScoreListener.onClick(oldScore, newScore, position);
                     }
@@ -170,8 +171,8 @@ public class MatchOneXOneListAdapter extends ListAdapter<Match, SSUtil.CardViewH
                 @Override
                 public void onClick(View v) {
                     if (firstScoreListener != null) {
-                        int newScore = setNewScoreMatch(firstPlayerScore, false);
-                        int oldScore = setOldScoreMatch(newScore, false);
+                        int newScore = MatchHelper.setNewScoreMatch(firstPlayerScore, false);
+                        int oldScore = MatchHelper.setOldScoreMatch(newScore, false);
 
                         firstScoreListener.onClick(oldScore, newScore, position);
                     }
@@ -182,8 +183,8 @@ public class MatchOneXOneListAdapter extends ListAdapter<Match, SSUtil.CardViewH
                 @Override
                 public void onClick(View v) {
                     if (secondScoreListener != null) {
-                        int newScore = setNewScoreMatch(secondPlayerScore, true);
-                        int oldScore = setOldScoreMatch(newScore, true);
+                        int newScore = MatchHelper.setNewScoreMatch(secondPlayerScore, true);
+                        int oldScore = MatchHelper.setOldScoreMatch(newScore, true);
 
                         secondScoreListener.onClick(oldScore, newScore, position);
                     }
@@ -194,8 +195,8 @@ public class MatchOneXOneListAdapter extends ListAdapter<Match, SSUtil.CardViewH
                 @Override
                 public void onClick(View v) {
                     if (secondScoreListener != null) {
-                        int newScore = setNewScoreMatch(secondPlayerScore, false);
-                        int oldScore = setOldScoreMatch(newScore, false);
+                        int newScore = MatchHelper.setNewScoreMatch(secondPlayerScore, false);
+                        int oldScore = MatchHelper.setOldScoreMatch(newScore, false);
 
                         secondScoreListener.onClick(oldScore, newScore, position);
                     }
@@ -253,26 +254,6 @@ public class MatchOneXOneListAdapter extends ListAdapter<Match, SSUtil.CardViewH
                 }
             }
         }
-    }
-
-    public int setOldScoreMatch(int newScore, boolean isPlus){
-        if(isPlus && newScore > 0){
-            return newScore -1;
-
-        }else if(newScore >= 0){
-            return newScore +1;
-        }
-
-        return 0;
-    }
-
-    public int setNewScoreMatch(TextView playerScore, boolean isPlus){
-        if(isPlus){
-            SSUtil.playerPlusScore(playerScore);
-        }else{
-            SSUtil.playerLessScore(playerScore);
-        }
-        return SSUtil.getPlayerScore(playerScore);
     }
 
     public static class MatchDiff extends DiffUtil.ItemCallback<Match>{
