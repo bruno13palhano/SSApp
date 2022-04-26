@@ -1,5 +1,7 @@
 package com.bruno13palhano.ssapp;
 
+import android.widget.TextView;
+
 import com.bruno13palhano.ssapp.data.Match;
 import com.bruno13palhano.ssapp.data.Player;
 import com.bruno13palhano.ssapp.viewmodels.MatchViewModel;
@@ -8,6 +10,30 @@ import com.bruno13palhano.ssapp.viewmodels.PlayerViewModel;
 import java.util.List;
 
 public class MatchHelper {
+
+    public static void updateRotationMatchValues(){
+
+    }
+    public static int setOldScoreMatch(int newScore, boolean isPlus){
+        if(isPlus && newScore > 0){
+            return newScore -1;
+
+        }else if(newScore >= 0){
+            return newScore +1;
+        }
+
+        return 0;
+    }
+
+    public static int setNewScoreMatch(TextView playerScore, boolean isPlus){
+        if(isPlus){
+            SSUtil.playerPlusScore(playerScore);
+        }else{
+            SSUtil.playerLessScore(playerScore);
+        }
+        return SSUtil.getPlayerScore(playerScore);
+    }
+
     public static void updateMatchValues(MatchValues matchValues, PlayerViewModel playerViewModel, MatchViewModel matchViewModel){
         int newScore = matchValues.getNewScore();
         int oldScore = matchValues.getOldScore();
