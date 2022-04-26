@@ -175,7 +175,12 @@ public class HomeFragment extends Fragment {
                         menu.getItem(1).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
                             @Override
                             public boolean onMenuItemClick(MenuItem item) {
-                                deleteOneXOneMatch(position);
+                                MatchValues matchValues = new MatchValues();
+                                matchValues.setMatchList(matchesList);
+                                matchValues.setPosition(position);
+
+                                MatchHelper.deleteOneXOneMatch(matchValues, matchViewModel);
+
                                 return true;
                             }
                         });
@@ -427,10 +432,6 @@ public class HomeFragment extends Fragment {
     public void deleteRotationMatch(int position){
         rotationViewModel.deleteRotationPlayer(playersRotationsList.get(position));
         rotationPlayersNameSet.remove(playersRotationsList.get(position).getNickname());
-    }
-
-    public void deleteOneXOneMatch(int position){
-        matchViewModel.deleteMatch(matchesList.get(position));
     }
 
     @Override
