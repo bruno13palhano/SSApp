@@ -65,7 +65,6 @@ public class EditPlayerFragment extends Fragment {
         playerViewModel = new ViewModelProvider(this).get(PlayerViewModel.class);
         calendar = Calendar.getInstance();
 
-        Intent intent = this.getActivity().getIntent();
         Bundle bundle = this.getArguments();
 
         if(bundle != null){
@@ -201,5 +200,4 @@ public class EditPlayerFragment extends Fragment {
             Toast.makeText(getContext(), R.string.alert_fill_data_player, Toast.LENGTH_SHORT).show();
         }
     }
-
 }
