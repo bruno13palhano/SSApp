@@ -13,7 +13,10 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.bruno13palhano.ssapp.R;
+import com.bruno13palhano.ssapp.SSUtil;
 import com.bruno13palhano.ssapp.viewmodels.PlayerViewModel;
+
+import java.io.FileNotFoundException;
 
 public class ShowAllPlayersFragment extends Fragment {
 
@@ -42,8 +45,11 @@ public class ShowAllPlayersFragment extends Fragment {
 
         Bundle bundle = this.getArguments();
         if(bundle != null){
-            // TODO: 15/04/2022 comprimir essas imagens.
-            playerImage.setImageURI(Uri.parse(bundle.getString("imageUri")));
+            try{
+                playerImage.setImageBitmap(SSUtil.decodeUri(requireActivity(), Uri.parse(bundle.getString("imageUri")),
+                        150));
+            }catch (NullPointerException | FileNotFoundException ignored){}
+
             playerName.setText(bundle.getString("nickname"));
             playerScoreTotal.setText(String.valueOf(bundle.getInt("scoreTotal")).concat(" Pts."));
             playerScoreMatch.setText(String.valueOf(bundle.getInt("scoreMatch")).concat(" Pts."));
