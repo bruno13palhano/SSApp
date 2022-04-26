@@ -234,7 +234,7 @@ public class MatchHelper {
         deleteOneXOneMatch(matchValues, matchViewModel);
     }
 
-    private static void deleteOneXOneMatch(MatchValues matchValues, MatchViewModel matchViewModel){
+    public static void deleteOneXOneMatch(MatchValues matchValues, MatchViewModel matchViewModel){
         matchViewModel.deleteMatch(matchValues.getMatchList().get(matchValues.getPosition()));
     }
 }
