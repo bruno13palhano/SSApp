@@ -20,7 +20,7 @@ public interface RotationDao {
     @Query("SELECT * FROM rotation_table")
     LiveData<List<Rotation>> getAllPlayersRotation();
 
-    @Query("UPDATE rotation_table SET score = :score WHERE playerId = :id")
+    @Query("UPDATE rotation_table SET score = :score WHERE rotationId = :id")
     void updateScorePlayerRotation(int score, long id);
 
     @Delete

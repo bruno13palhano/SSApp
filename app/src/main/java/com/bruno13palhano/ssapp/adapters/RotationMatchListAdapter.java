@@ -93,7 +93,6 @@ public class RotationMatchListAdapter extends ListAdapter<Rotation, SSUtil.CardV
             @Override
             public void onClick(View v) {
                 if(onScoreClickListener != null){
-
                     int newScore = MatchHelper.setNewScoreMatch(score, true);
                     int oldScore = MatchHelper.setOldScoreMatch(newScore, true);
 

@@ -4,16 +4,37 @@ import android.widget.TextView;
 
 import com.bruno13palhano.ssapp.data.Match;
 import com.bruno13palhano.ssapp.data.Player;
+import com.bruno13palhano.ssapp.data.Rotation;
 import com.bruno13palhano.ssapp.viewmodels.MatchViewModel;
 import com.bruno13palhano.ssapp.viewmodels.PlayerViewModel;
+import com.bruno13palhano.ssapp.viewmodels.RotationViewModel;
 
 import java.util.List;
 
 public class MatchHelper {
 
-    public static void updateRotationMatchValues(){
+    public static void updateRotationMatchValues(MatchValues matchValues, PlayerViewModel playerViewModel, RotationViewModel rotationViewModel){
+        int newScore = matchValues.getNewScore();
+        int oldScore = matchValues.getOldScore();
+        int scoreDifference = newScore - oldScore;
+        int position = matchValues.getPosition();
+        List<Player> playerList = matchValues.getPlayerList();
+        List<Rotation> rotationList = matchValues.getRotationList();
+
+        long playerId = rotationList.get(position).getPlayerId();
+
+        int currentPlayerScore = rotationList.get(position).getScore();
+        int currentPlayerNumberOfMatches = setCurrentPlayerNumberOfMatches(playerId, playerList);
+        int currentPlayerNumberOfWins = setCurrentPlayerNumberOfWins(playerId, playerList);
+
+        if(!(currentPlayerScore == 0 && newScore == 0)){
+            rotationViewModel.updateScoreRotationPlayer(currentPlayerScore + scoreDifference, rotationList.get(position).getRotationId());
+            playerViewModel.updatePlayerNumberOfMatches(currentPlayerNumberOfMatches + scoreDifference, playerId);
+            playerViewModel.updatePlayerNumberOfWins(currentPlayerNumberOfWins + scoreDifference, playerId);
+        }
 
     }
+
     public static int setOldScoreMatch(int newScore, boolean isPlus){
         if(isPlus && newScore > 0){
             return newScore -1;

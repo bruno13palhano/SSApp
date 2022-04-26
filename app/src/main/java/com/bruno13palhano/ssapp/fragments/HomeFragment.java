@@ -375,10 +375,20 @@ public class HomeFragment extends Fragment {
             processRotationInBackground(playersRotationsList);
         });
 
+        // TODO: 25/04/2022 adicionar quantidade de pártidas..
         rotationAdapter.setOnScoreClickListener(new RotationMatchListAdapter.OnScoreClickListener() {
             @Override
             public void onClick(int oldScore, int newScore, int position) {
-                rotationViewModel.updateScoreRotationPlayer(newScore, playersRotationsList.get(position).getPlayerId());
+//                rotationViewModel.updateScoreRotationPlayer(newScore, playersRotationsList.get(position).getPlayerId());
+                MatchValues matchValues = new MatchValues();
+                matchValues.setNewScore(newScore);
+                matchValues.setOldScore(oldScore);
+                matchValues.setPosition(position);
+                matchValues.setPlayerList(playersList);
+                matchValues.setRotationList(playersRotationsList);
+
+                MatchHelper.updateRotationMatchValues(matchValues, playerViewModel, rotationViewModel);
+
                 rotationUpdateFlag = true;
             }
         });
@@ -685,13 +695,10 @@ public class HomeFragment extends Fragment {
                     @Override
                     public void run() {
                         rotationAdapter.setBitmaps(playersBitmaps);
+                        rotationAdapter.notifyDataSetChanged();
 
                         if(!rotationUpdateFlag) {
                             rotationAdapter.notifyItemRangeChanged(rotationAdapter.getItemCount() - 6, 6);
-                        }
-                        if(rotationInsertFlag){
-                            rotationRecycler.scrollToPosition(rotationAdapter.getItemCount() -1);
-                            rotationInsertFlag = false;
                         }
 
                         executor.shutdown();
