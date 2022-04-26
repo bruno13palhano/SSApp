@@ -23,6 +23,8 @@ import com.bruno13palhano.ssapp.SSUtil;
 import com.bruno13palhano.ssapp.data.Player;
 import com.bruno13palhano.ssapp.viewmodels.PlayerViewModel;
 
+import java.io.FileNotFoundException;
+
 
 public class ShowPlayerFragment extends Fragment {
     private Player player;
@@ -64,8 +66,12 @@ public class ShowPlayerFragment extends Fragment {
             player.setPlayerNumberOfMatches(bundle.getInt("numberOfMatches"));
             playerPosition = bundle.getInt("position");
 
+            try{
+                inputPlayerImageUri.setImageBitmap(SSUtil.decodeUri(requireActivity(), Uri.parse(bundle.getString("imageUri")),
+                        150));
+            }catch (NullPointerException | FileNotFoundException ignored){}
+
             inputPlayerNickname.setText(player.getPlayerNickName());
-            inputPlayerImageUri.setImageURI(Uri.parse(player.getPlayerImageUri()));
             inputPlayerScoreTotal.setText(String.valueOf(player.getPlayerScoreTotal()).concat(" Pts."));
             inputPlayerScoreMatch.setText(String.valueOf(player.getPlayerScoreMatch()).concat(" Pts."));
             inputPlayerScoreSeries.setText(String.valueOf(player.getPlayerScoreSeries()).concat(" Pts."));
