@@ -41,8 +41,6 @@ public class EditPlayerFragment extends Fragment {
     private Player player;
     private PlayerViewModel playerViewModel;
 
-    private int playerPosition;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -79,7 +77,6 @@ public class EditPlayerFragment extends Fragment {
             player.setPlayerScoreTotal(bundle.getInt("scoreTotal"));
             player.setPlayerScoreSeries(bundle.getInt("scoreSeries"));
             player.setPlayerWonTournaments(bundle.getInt("numberOfWonTournaments"));
-            playerPosition = bundle.getInt("position");
 
             try{
                 inputPlayerImageUri.setImageBitmap(SSUtil.decodeUri(requireActivity(), Uri.parse(bundle.getString("imageUri")),
@@ -166,19 +163,7 @@ public class EditPlayerFragment extends Fragment {
 
         if(id == android.R.id.home){
             getActivity().onBackPressed();
-//            Intent intent = new Intent(getContext(), AllPlayersActivity.class);
-//
-//            intent.putExtra("id", player.getPlayerId());
-//            intent.putExtra("nickname", player.getPlayerNickName());
-//            intent.putExtra("imageUri", player.getPlayerImageUri());
-//            intent.putExtra("dateInMillis", player.getPlayerDateInMillis());
-//            intent.putExtra("scoreMatch", player.getPlayerScoreMatch());
-//            intent.putExtra("scoreTotal", player.getPlayerScoreTotal());
-//            intent.putExtra("scoreSeries", player.getPlayerScoreSeries());
-//            intent.putExtra("numberOfWonTournaments", player.getPlayerWonTournaments());
-//            intent.putExtra("position", playerPosition);
-//
-//            startActivity(intent);
+
             return true;
 
         }else if(id == R.id.action_done){
@@ -217,19 +202,4 @@ public class EditPlayerFragment extends Fragment {
         }
     }
 
-    private void setIntentAllPlayersActivity(){
-        Intent intent = new Intent(getActivity(), AllPlayersActivity.class);
-        intent.putExtra("fragment", "editPlayer");
-        intent.putExtra("id", player.getPlayerId());
-        intent.putExtra("nickname", player.getPlayerNickName());
-        intent.putExtra("imageUri", player.getPlayerImageUri());
-        intent.putExtra("dateInMillis", player.getPlayerDateInMillis());
-        intent.putExtra("scoreMatch", player.getPlayerScoreMatch());
-        intent.putExtra("scoreTotal", player.getPlayerScoreTotal());
-        intent.putExtra("scoreSeries", player.getPlayerScoreSeries());
-        intent.putExtra("numberOfWonTournaments", player.getPlayerWonTournaments());
-        intent.putExtra("position", playerPosition);
-
-        startActivity(intent);
-    }
 }
