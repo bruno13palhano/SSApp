@@ -51,7 +51,7 @@ public class TopFiveDialog extends DialogFragment {
         playersScores[4] = view.findViewById(R.id.player_5_score);
 
         if(playersBitmapList != null && playerList != null){
-            for(int i = 0; i < playerList.size() -1; i++){
+            for(int i = 0; i < playerList.size(); i++){
                 playersImages[i].setImageBitmap(playersBitmapList.get(i));
                 playersNames[i].setText(playerList.get(i).getPlayerNickName());
                 playersScores[i].setText(String.valueOf(playerList.get(i).getPlayerScoreTotal()).concat(" Pts."));
