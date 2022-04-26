@@ -38,6 +38,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.io.FileNotFoundException;
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
@@ -162,7 +163,11 @@ public class AddPlayerFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, resultData);
         if(requestCode == 2 && resultCode == getActivity().RESULT_OK){
             playerImageURI = resultData.getData().toString();
-            inputPlayerImage.setImageURI(resultData.getData());
+
+            try{
+                inputPlayerImage.setImageBitmap(SSUtil.decodeUri(requireActivity(), resultData.getData(),
+                        150));
+            }catch (NullPointerException | FileNotFoundException ignored){}
         }
     }
 
@@ -189,7 +194,6 @@ public class AddPlayerFragment extends Fragment {
             player.setPlayerCreateProfileDateInMillis(playerCreateProfileDateInMillis);
             playerViewModel.insertPlayer(player);
 
-//            getActivity().onBackPressed();
             Fragment fragment = new PlayerFragment();
             SSUtil.setFragment(getActivity(), fragment, false);
             return true;
