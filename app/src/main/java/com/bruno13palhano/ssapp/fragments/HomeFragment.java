@@ -377,8 +377,8 @@ public class HomeFragment extends Fragment {
 
         rotationAdapter.setOnScoreClickListener(new RotationMatchListAdapter.OnScoreClickListener() {
             @Override
-            public void onClick(int score, int position) {
-                rotationViewModel.updateScoreRotationPlayer(score, playersRotationsList.get(position).getPlayerId());
+            public void onClick(int oldScore, int newScore, int position) {
+                rotationViewModel.updateScoreRotationPlayer(newScore, playersRotationsList.get(position).getPlayerId());
                 rotationUpdateFlag = true;
             }
         });
