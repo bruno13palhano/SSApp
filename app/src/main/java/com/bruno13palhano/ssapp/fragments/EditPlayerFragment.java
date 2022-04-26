@@ -20,12 +20,14 @@ import android.widget.Toast;
 
 import com.bruno13palhano.ssapp.MainActivity;
 import com.bruno13palhano.ssapp.R;
+import com.bruno13palhano.ssapp.SSUtil;
 import com.bruno13palhano.ssapp.activities.AllPlayersActivity;
 import com.bruno13palhano.ssapp.data.Player;
 import com.bruno13palhano.ssapp.viewmodels.PlayerViewModel;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 
+import java.io.FileNotFoundException;
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
@@ -79,7 +81,11 @@ public class EditPlayerFragment extends Fragment {
             player.setPlayerWonTournaments(bundle.getInt("numberOfWonTournaments"));
             playerPosition = bundle.getInt("position");
 
-            inputPlayerImageUri.setImageURI(Uri.parse(bundle.getString("imageUri")));
+            try{
+                inputPlayerImageUri.setImageBitmap(SSUtil.decodeUri(requireActivity(), Uri.parse(bundle.getString("imageUri")),
+                        150));
+            }catch (NullPointerException | FileNotFoundException ignored){}
+
             inputPlayerNickname.setText(bundle.getString("nickname"));
             calendar.setTimeInMillis(bundle.getLong("dateInMillis"));
 
