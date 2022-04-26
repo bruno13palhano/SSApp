@@ -14,6 +14,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 
+import com.bruno13palhano.ssapp.MatchHelper;
 import com.bruno13palhano.ssapp.R;
 import com.bruno13palhano.ssapp.SSUtil;
 import com.bruno13palhano.ssapp.data.Rotation;
@@ -36,7 +37,7 @@ public class RotationMatchListAdapter extends ListAdapter<Rotation, SSUtil.CardV
     }
 
     public interface OnScoreClickListener{
-        void onClick(int score, int position);
+        void onClick(int oldScore, int newScore, int position);
     }
 
     public void setOnLongItemClickListener(OnLongItemClickListener onLongItemClickListener){
@@ -92,8 +93,11 @@ public class RotationMatchListAdapter extends ListAdapter<Rotation, SSUtil.CardV
             @Override
             public void onClick(View v) {
                 if(onScoreClickListener != null){
-                    SSUtil.playerPlusScore(score);
-                    onScoreClickListener.onClick(SSUtil.getPlayerScore(score), position);
+
+                    int newScore = MatchHelper.setNewScoreMatch(score, true);
+                    int oldScore = MatchHelper.setOldScoreMatch(newScore, true);
+
+                    onScoreClickListener.onClick(oldScore, newScore, position);
                 }
             }
         });
@@ -102,8 +106,10 @@ public class RotationMatchListAdapter extends ListAdapter<Rotation, SSUtil.CardV
             @Override
             public void onClick(View v) {
                 if(onScoreClickListener != null){
-                    SSUtil.playerLessScore(score);
-                    onScoreClickListener.onClick(SSUtil.getPlayerScore(score), position);
+                    int newScore = MatchHelper.setNewScoreMatch(score, false);
+                    int oldScore = MatchHelper.setOldScoreMatch(newScore, false);
+
+                    onScoreClickListener.onClick(oldScore, newScore, position);
                 }
             }
         });
