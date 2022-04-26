@@ -27,6 +27,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bruno13palhano.ssapp.MainActivity;
+import com.bruno13palhano.ssapp.MatchHelper;
+import com.bruno13palhano.ssapp.MatchValues;
 import com.bruno13palhano.ssapp.R;
 import com.bruno13palhano.ssapp.SSUtil;
 import com.bruno13palhano.ssapp.adapters.MatchOneXOneListAdapter;
@@ -85,15 +87,31 @@ public class TournamentFragment extends Fragment {
 
         tournamentAdapter.setFirstScoreClickListener(new MatchOneXOneListAdapter.OnPlusLessClickListener() {
             @Override
-            public void onClick(int olsScore, int newScore, int position) {
-                tournamentViewModel.updateFirstPlayerScoreMatch(newScore, tournamentMatchesList.get(position).getMatchId());
+            public void onClick(int oldScore, int newScore, int position) {
+                MatchValues matchValues = new MatchValues();
+                matchValues.setPlayerList(playersList);
+                matchValues.setMatchList(tournamentMatchesList);
+                matchValues.setPosition(position);
+                matchValues.setOldScore(oldScore);
+                matchValues.setNewScore(newScore);
+                matchValues.setFirstPlayer(true);
+
+                MatchHelper.updateMatchValues(matchValues, playerViewModel,tournamentViewModel);
             }
         });
 
         tournamentAdapter.setSecondScoreClickListener(new MatchOneXOneListAdapter.OnPlusLessClickListener() {
             @Override
             public void onClick(int oldScore, int newScore, int position) {
-                tournamentViewModel.updateSecondPlayerScoreMatch(newScore, tournamentMatchesList.get(position).getMatchId());
+                MatchValues matchValues = new MatchValues();
+                matchValues.setPlayerList(playersList);
+                matchValues.setMatchList(tournamentMatchesList);
+                matchValues.setPosition(position);
+                matchValues.setOldScore(oldScore);
+                matchValues.setNewScore(newScore);
+                matchValues.setFirstPlayer(false);
+
+                MatchHelper.updateMatchValues(matchValues, playerViewModel,tournamentViewModel);
             }
         });
 
