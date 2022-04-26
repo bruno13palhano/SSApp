@@ -27,7 +27,7 @@ public class MatchOneXOneListAdapter extends ListAdapter<Match, SSUtil.CardViewH
     private boolean isSeries;
     private int scorePerSeries;
 
-    OnViewUpdate firstPlayerSeriesListener, secondPLayerSeriesListener;
+    private OnViewUpdate firstPlayerSeriesListener, secondPLayerSeriesListener;
 
     public void setOnFirstPlayerSeriesListener(OnViewUpdate firstPlayerSeriesListener){
         this.firstPlayerSeriesListener = firstPlayerSeriesListener;
@@ -106,7 +106,7 @@ public class MatchOneXOneListAdapter extends ListAdapter<Match, SSUtil.CardViewH
         ImageView secondPlayerImageUri = cardView.findViewById(R.id.match_second_player_card_image);
         TextView secondPlayerNickname = cardView.findViewById(R.id.match_second_player_name);
         TextView secondPlayerScore = cardView.findViewById(R.id.match_edit_second_player_score);
-        //Botões de aumentar e reduzir  a pontuação dos jogadores.
+
         ImageView firstPlayerPlusScore = cardView.findViewById(R.id.match_first_player_score_plus);
         ImageView firstPlayerLessScore = cardView.findViewById(R.id.match_first_player_score_less);
         ImageView secondPlayerPlusScore = cardView.findViewById(R.id.match_second_player_score_plus);
@@ -243,7 +243,6 @@ public class MatchOneXOneListAdapter extends ListAdapter<Match, SSUtil.CardViewH
                     firstPlayerSeriesListener.onViewUpdate(SSUtil.getPlayerScore(textViewScoreFirstPlayerSeries), position);
                 }
 
-                // TODO: 18/04/2022 os listeners funcionam, falta tira o bug do placar esalvar no db...
             }else if(secondScore > 0 && secondScore == scorePerSeries){
                 SSUtil.playerPlusScore(textViewScoreSecondPlayerSeries);
                 firstPlayerScore.setText("0");
