@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/com.bruno13palhano.ssapp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.bruno13palhano.ssapp.data.PieChart
+        android:layout_height="100dp"
+        android:layout_width="100dp"
+        custom:showText="true"
+        custom:labelPosition="left"/>
+
+
+</LinearLayout>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/match_card"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:layout_margin="5dp"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_constrain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/match_first_player_score_plus"
+            android:layout_width="48dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="-12dp"
+            android:background="@drawable/ic_baseline_keyboard_arrow_up_24"
+            app:layout_constraintBottom_toTopOf="@+id/match_edit_first_player_score"
+            app:layout_constraintEnd_toStartOf="@+id/match_player_versus"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/match_second_player_score_plus"
+            android:layout_width="48dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="-12dp"
+            android:background="@drawable/ic_baseline_keyboard_arrow_up_24"
+            app:layout_constraintBottom_toTopOf="@+id/match_edit_second_player_score"
+            app:layout_constraintStart_toEndOf="@+id/match_player_versus"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/match_first_player_score_less"
+            android:layout_width="48dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="-12dp"
+            android:background="@drawable/ic_baseline_keyboard_arrow_down_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/match_player_versus"
+            app:layout_constraintTop_toBottomOf="@+id/match_edit_first_player_score" />
+
+        <ImageView
+            android:id="@+id/match_second_player_score_less"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-12dp"
+            android:background="@drawable/ic_baseline_keyboard_arrow_down_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/match_player_versus"
+            app:layout_constraintTop_toBottomOf="@+id/match_edit_second_player_score" />
+
+        <TextView
+            android:id="@+id/match_second_player_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:hint="Jogador 2"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/circularRevealCardView6"
+            app:layout_constraintStart_toEndOf="@+id/circularRevealCardView8"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/match_first_player_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:hint="Jogador 1"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/circularRevealCardView9"
+            app:layout_constraintStart_toEndOf="@+id/circularRevealCardView5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/match_edit_second_player_score"
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:textAlignment="center"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintStart_toEndOf="@+id/match_player_versus"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/match_edit_first_player_score"
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:textAlignment="center"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toStartOf="@+id/match_player_versus"
+            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:layout_constraintVertical_bias="0.508" />
+
+        <TextView
+            android:id="@+id/match_player_versus"
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_baseline_electric_bolt_24"
+            android:textSize="22sp"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+            android:id="@+id/circularRevealCardView6"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="16dp"
+            app:cardCornerRadius="50dp"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/match_second_player_card_image"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/ic_baseline_person_24"
+                android:contentDescription="Player Image"
+                android:scaleType="centerCrop" />
+        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+            android:id="@+id/circularRevealCardView5"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            app:cardCornerRadius="50dp"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/match_first_player_card_image"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/ic_baseline_person_24"
+                android:contentDescription="Player Image"
+                android:scaleType="centerCrop" />
+        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+            android:id="@+id/circularRevealCardView8"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            app:cardCornerRadius="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/match_edit_second_player_score"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/match_second_player_status_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp" />
+        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+            android:id="@+id/circularRevealCardView9"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="32dp"
+            app:cardCornerRadius="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/match_edit_first_player_score">
+
+            <ImageView
+                android:id="@+id/match_first_player_status_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp" />
+        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

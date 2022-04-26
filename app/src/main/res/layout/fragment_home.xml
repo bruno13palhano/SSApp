@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".fragments.HomeFragment">
+
+        <TextView
+            android:id="@+id/match_recycler_header_one_versus_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_one_versus_one"
+            android:layout_gravity="center"
+            android:textSize="25sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/match_recycler_one_versus_one"
+            android:layout_width="match_parent"
+            android:layout_height="310dp"
+            android:scrollbars="horizontal"/>
+
+        <TextView
+            android:id="@+id/match_recycler_header_series"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Séries"
+            android:layout_gravity="center"
+            android:textSize="25sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/match_recycler_series"
+            android:layout_width="match_parent"
+            android:layout_height="330dp"
+            android:scrollbars="horizontal"/>
+
+        <TextView
+            android:id="@+id/match_recycler_header_rotation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_rotation"
+            android:layout_gravity="center"
+            android:textSize="25sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/match_recycler_rotation"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scrollbars="vertical"/>
+    </LinearLayout>
+</ScrollView>

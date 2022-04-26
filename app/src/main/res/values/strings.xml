@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">SSApp</string>
+    <string name="label_home_fragment">Home</string>
+    <string name="label_player_fragment">Player</string>
+    <string name="label_settings_fragment">Settings</string>
+    <string name="label_tournament_fragment">Torneio</string>
+    <string name="label_player_date">Data de Nascimento</string>
+
+    <!--  Icons Labels  -->
+    <string name="title_add_player">Adicionar Jogador</string>
+    <string name="hint_add_player_name">Nome do Jogador</string>
+    <string name="hint_player_score_total">Pontuação Geral:</string>
+    <string name="hint_player_score_match">Última Partida:</string>
+    <string name="hint_player_score_series">Última Série:</string>
+    <string name="hint_player_number_of_won_tournaments">Torneios Vencidos:</string>
+    <string name="title_done">Feito</string>
+    <string name="title_more">Opções</string>
+
+
+    <!--  Alerts  -->
+    <string name="alert_added_player_name">Jogador Adicionado</string>
+    <string name="alert_fill_data_player">Preencha os Dados</string>
+    <string name="alert_delete_player">Jogador Deletado</string>
+
+    <!--  Labels dor menus  -->
+    <string name="label_menu_item_finish">Finalizar</string>
+    <string name="label_menu_item_edit">Editar</string>
+    <string name="label_menu_item_delete">Remover</string>
+    <string name="label_menu_item_tournament">Torneio</string>
+    <string name="label_menu_item_versus_one">1 x 1</string>
+    <string name="label_menu_item_rotation">Rodízio</string>
+    <string name="label_menu_item_series">Séries</string>
+    <string name="label_menu_item_matches_per_series">Pontos por Série</string>
+    <string name="label_menu_item_ranking">Ranking</string>
+    <string name="label_menu_item_new_tournament">Novo Torneio</string>
+    <string name="label_menu_item_players">Jogadores</string>
+    <string name="label_menu_item_delete_tournament">Remover torneio</string>
+    <string name="label_one_versus_one">Jogos 1 x 1</string>
+    <string name="label_rotation">Jogos rodízio</string>
+    <string name="label_menu_item_top_five_ranking">Top 5</string>
+    <string name="hint_player_number_of_matches">Partida Jogadas:</string>
+    <string name="hint_player_number_of_wins">Número de Vitórias:</string>
+
+</resources>

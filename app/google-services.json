@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "931127979334",
+    "project_id": "ssapp-fdf46",
+    "storage_bucket": "ssapp-fdf46.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:931127979334:android:90884cd783cd4cbd7e8947",
+        "android_client_info": {
+          "package_name": "com.bruno13palhano.ssapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "931127979334-63933e8ko3t6ospdngk77e404rjshfbl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDg5oexn_R_bxAV3BRkiuMFD0NqeWzVkQs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "931127979334-63933e8ko3t6ospdngk77e404rjshfbl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

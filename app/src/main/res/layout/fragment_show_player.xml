@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    tools:context=".fragments.ShowPlayerFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="38dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:id="@+id/circularRevealCardView3"
+            android:layout_gravity="center"
+            android:layout_marginTop="38dp"
+            android:layout_marginBottom="38dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:cardCornerRadius="100dp">
+
+            <ImageView
+                android:id="@+id/show_player_image_icon"
+                android:background="@drawable/ic_baseline_person_24"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                />
+        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/show_player_name_icon"
+                android:background="@drawable/ic_baseline_person_24"
+                android:layout_gravity="center"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/show_text_player_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:textSize="25sp"
+                android:hint="@string/hint_add_player_name" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:minHeight="48dp" >
+
+            <ImageView
+                android:id="@+id/edit_player_score_total_icon"
+                android:background="@drawable/ic_baseline_emoji_events_24"
+                android:layout_gravity="center"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_player_score_total"
+                android:layout_gravity="center"
+                android:textSize="25sp"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/show_text_player_score_total"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:minHeight="48dp" >
+
+            <ImageView
+                android:id="@+id/show_player_score_match_icon"
+                android:background="@drawable/ic_baseline_emoji_events_24"
+                android:layout_gravity="center"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_player_score_match"
+                android:layout_gravity="center"
+                android:textSize="25sp"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/show_text_player_score_match"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:minHeight="48dp" >
+
+            <ImageView
+                android:id="@+id/show_player_score_series_icon"
+                android:background="@drawable/ic_baseline_emoji_events_24"
+                android:layout_gravity="center"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_player_score_series"
+                android:layout_gravity="center"
+                android:textSize="25sp"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/show_text_player_score_series"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:minHeight="48dp" >
+
+            <ImageView
+                android:id="@+id/show_player_number_of_won_tournaments_icon"
+                android:background="@drawable/ic_baseline_emoji_events_24"
+                android:layout_gravity="center"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_player_number_of_won_tournaments"
+                android:layout_gravity="center"
+                android:textSize="25sp"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/show_text_player_number_of_won_tournaments"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:minHeight="48dp" >
+
+            <ImageView
+                android:id="@+id/show_player_number_of_wins_icon"
+                android:background="@drawable/ic_baseline_emoji_events_24"
+                android:layout_gravity="center"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_player_number_of_wins"
+                android:layout_gravity="center"
+                android:textSize="25sp"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/show_text_player_number_of_wins"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="?attr/actionBarSize"
+            android:orientation="horizontal"
+            android:minHeight="48dp" >
+
+            <ImageView
+                android:id="@+id/show_player_number_of_matches_icon"
+                android:background="@drawable/ic_baseline_emoji_events_24"
+                android:layout_gravity="center"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_player_number_of_matches"
+                android:layout_gravity="center"
+                android:textSize="25sp"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/show_text_player_number_of_matches"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
