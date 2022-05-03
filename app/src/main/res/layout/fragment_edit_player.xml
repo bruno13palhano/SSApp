@@ -46,13 +46,20 @@
                 android:layout_marginEnd="8dp"
                 android:contentDescription="Player Icon" />
 
-            <EditText
-                android:id="@+id/edit_player_name"
-                android:layout_width="0dp"
-                android:hint="@string/hint_add_player_name"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:minHeight="48dp"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:hint="@string/hint_player_name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_player_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:maxLines="1"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -69,13 +76,19 @@
                 android:layout_height="24dp"
                 android:layout_marginEnd="8dp" />
 
-            <EditText
-                android:id="@+id/edit_player_birthday"
-                android:layout_width="0dp"
-                android:hint="@string/label_player_date"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:minHeight="48dp" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:hint="@string/hint_player_birthday">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_player_birthday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
     </LinearLayout>
 

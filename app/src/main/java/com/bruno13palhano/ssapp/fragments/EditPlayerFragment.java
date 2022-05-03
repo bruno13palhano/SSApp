@@ -26,6 +26,7 @@ import com.bruno13palhano.ssapp.data.Player;
 import com.bruno13palhano.ssapp.viewmodels.PlayerViewModel;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.io.FileNotFoundException;
 import java.util.Calendar;
@@ -33,7 +34,7 @@ import java.util.concurrent.TimeUnit;
 
 public class EditPlayerFragment extends Fragment {
     private ImageView inputPlayerImageUri;
-    private EditText inputPlayerNickname, inputPlayerBirthday;
+    private TextInputEditText inputPlayerNickname, inputPlayerBirthday;
     private Calendar calendar;
     private String day, month, year;
     private long playerBirthdayInMillis;
