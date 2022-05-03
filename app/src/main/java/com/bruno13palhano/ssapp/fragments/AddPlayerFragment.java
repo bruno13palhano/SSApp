@@ -29,6 +29,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -44,7 +45,7 @@ import java.util.concurrent.TimeUnit;
 
 public class AddPlayerFragment extends Fragment {
     private Calendar calendar;
-    private EditText inputPlayerNickName, inputPlayerBirthday;
+    private TextInputEditText inputPlayerNickName, inputPlayerBirthday;
     private ImageView inputPlayerImage;
 
     private String playerImageURI;
